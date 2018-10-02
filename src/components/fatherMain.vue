@@ -36,7 +36,7 @@ export default {
 			const temp = []
 			const newData = dataList.map(data => {		
 				if(data.id === val.id){
-					temp.push({id:data.id, txt:data.txt, state: true})
+					temp.push({id:data.id, txt:data.txt, state: 'true'})
 				}else{
 					temp.push({id:data.id, txt:data.txt, state: data.state})					
 				}
@@ -56,7 +56,7 @@ export default {
 		insert() {
 			if(this.txtHomework !== '') {
 				const arrayList = this.list
-				arrayList.push({id:Date.now(), txt:this.txtHomework, state:false})
+				arrayList.push({id:Date.now(), txt:this.txtHomework, state:''})
 				this.txtHomework = ''
 			}else{
 				this.message = 'Es campo está vacio'

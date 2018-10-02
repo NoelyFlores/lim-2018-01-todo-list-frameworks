@@ -1,14 +1,14 @@
 <template>
   <ul class="collapsible">
     <li  v-for ='item in items' :key ='item.id' class="collection-item">
-			<div class="collapsible-header active">
-				<i class="material-icons">chevron_right</i>
-				{{item.txt}}
-				<!-- <label>{{item.state}}</label> -->
-				<span class="badge">
-        <i @click="completeHmw(item.id)" class="material-icons done">done</i>
-        <i @click="deleteHmw(item.id)" class="material-icons delete">delete</i>
-			</span>
+			<div class="collapsible-header" v-if="item.state?color = '#00BCD4':color = 'white'" v-bind:style="{ background: color}">
+					<i class="material-icons">chevron_right</i>
+						{{item.txt}}
+					<!-- 	<label>{{item.state}}</label> -->
+						<span class="badge">
+						<i @click="completeHmw(item.id)" class="material-icons done">done</i>
+						<i @click="deleteHmw(item.id)" class="material-icons delete">delete</i>
+					</span>			
 			</div>      
     </li>
  </ul>
@@ -19,7 +19,8 @@ export default {
     props: ['dataList'],
     data() {
       return {
-        items: this.dataList
+				items: this.dataList,
+				color: '',
       }
     },
     watch: {    
