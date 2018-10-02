@@ -115,7 +115,7 @@ border: 1px solid #03A9F4 !important;
 }
 .delete {
 	font-size: 2.6em;
-	color: #212121;
+	color: #797373db;
 }
 .collapsible {
   border-top: none !important;

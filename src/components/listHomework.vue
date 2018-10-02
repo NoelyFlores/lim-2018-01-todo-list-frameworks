@@ -3,7 +3,7 @@
     <li  v-for ='item in items' :key ='item.id' class="collection-item">
 			<div class="collapsible-header" v-bind:class="{ 'color': item.state, 'c-white': !item.state	}">
 					<i class="material-icons">chevron_right</i>
-						{{item.txt}}
+						<label>{{item.txt}}</label>
 					<!-- 	<label>{{item.state}}</label> -->
 						<span class="badge">
 						<i @click="completeHmw(item.id)" class="material-icons done">done</i>
@@ -40,9 +40,14 @@ export default {
 </script>
 <style>
 .color {
-	background-color: #00bcd4;
-	color: #fff;
+	background-color: #babebe75;;
+}
+.color label{
 	text-decoration: line-through;
+	color: #6a6c6d;	
+}
+label {
+  font-size: 1rem !important;
 }
 .c-white {
 	background-color: white
