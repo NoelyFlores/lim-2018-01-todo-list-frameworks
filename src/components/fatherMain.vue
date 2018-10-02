@@ -5,7 +5,7 @@
         <p>Que hacer hoy?</p>
 				<div class="box-insert">
 						<div class="box-container-txt">
-						<input  v-model="txtHomework" id="last_name" type="text" class="validate">				
+						<input  v-model="txtHomework" @keyup.enter="insert()" id="last_name" type="text" class="validate">				
 						<p>{{message}}</p>
 					</div>		
 					<div class="box-container-button">

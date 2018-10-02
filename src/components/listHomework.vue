@@ -1,7 +1,7 @@
 <template>
   <ul class="collapsible">
     <li  v-for ='item in items' :key ='item.id' class="collection-item">
-			<div class="collapsible-header" v-if="item.state?color = '#00BCD4':color = 'white'" v-bind:style="{ background: color}">
+			<div class="collapsible-header" v-bind:class="{ 'color': item.state, 'c-white': !item.state	}">
 					<i class="material-icons">chevron_right</i>
 						{{item.txt}}
 					<!-- 	<label>{{item.state}}</label> -->
@@ -39,6 +39,13 @@ export default {
 }
 </script>
 <style>
-
+.color {
+	background-color: #00bcd4;
+	color: #fff;
+	text-decoration: line-through;
+}
+.c-white {
+	background-color: white
+}
 </style>
 
