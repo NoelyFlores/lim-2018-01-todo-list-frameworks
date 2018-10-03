@@ -1,74 +1,27 @@
-# To-do list con un framework
+# To-do list
 
-## Objetivo
+## Introducción 
 
-Programar un to-do list que permita crear tareas, darlas por completadas y 
-eliminarlas.
+To-Do List es un programa sencillo que permite crear, tachar y eliminar tareas.
+Este proyecto pude desarrollar en dos dias utilizando la herramienta VUE CLI con la versión 2.x y como herramienta de diseño materialize y está desplegado en gh-pages.
 
-**Demo:**
-![todo-list](https://user-images.githubusercontent.com/25906896/45767595-35985e00-bc00-11e8-87e0-553c80524c13.gif)
+## Funcionalidades
 
+* Permite crear nuevas tareas.
+* No deja agregar tareas vacías de ningún tipo.
+* Permite marcar las tareas completadas.
+* Permite eliminar tareas específicas.
+* Contiene 3 componentes.
+ 
+## Planificación
 
-## Consideraciones generales
+![Planification](https://scontent.flim6-1.fna.fbcdn.net/v/t1.15752-9/43006843_337788840130203_9052575867691073536_n.png?_nc_cat=111&_nc_eui2=AeEVss3pipFbrtkjJhsiYdueY-9BhPsFcBz1gwXLWXkpQJrC8bqfI_AbfvA2qbLki1IIFZzAABWfTCBDCKf2PchqWq8sdV7H12p3Ulma5AUr1Q&oh=5e4d697aa0dd0d14f61759868bf8c87e&oe=5C566927)
 
-Este proyecto se debe "resolver" de forma individual.
+## Arquitectura 
 
-Se deberá desarrollar con una de estas tres herramientas: Angular, 
-React o Vue; previamente elegida por ti.
+Para configuración general de la arquitectura está por defecto con webpack, a continuación muestro una arquitectura simple de mi desarrollo
 
-Se puede replicar el diseño propuesto o crear su propio estilo.
-
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
-
-## Recursos
-
-### React
-
-* [React - docs oficiales](https://reactjs.org/)
-* [React - tutorial](https://egghead.io/courses/the-beginner-s-guide-to-react)
-* [create-react-app](https://github.com/facebook/create-react-app)
-* [React js en español - tutorial básico, primeros pasos y ejemplos - frontendlabs.io](https://frontendlabs.io/3158--react-js-espanol-tutorial-basico-primeros-pasos-ejemplos)
-
-### Angular
-
-* [Angular - docs oficiales](https://angular.io/)
-* [Angular CLI](https://cli.angular.io/)
-* [Angular - tutorial](https://www.youtube.com/watch?v=0eWrpsCLMJQ&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ)
-* [Angular - crud](https://www.youtube.com/watch?v=6wVolJfXn1c)
-
-### Vue
-
-* [Vue - docs oficiales](https://vuejs.org/)
-* [Vue CLI](https://cli.vuejs.org/)
-* [Vue- adicional](https://scotch.io/search?q=vue)
-* [Vue- school](https://vueschool.io/)
-
-
-## Checklist
-
-### Parte obligatoria
-
-#### General
-
-* [ ] El `README.md` debe contener un resumen de lo que encontraremos en tu 
-proyecto.
-
-#### Funcionalidades
-
-* [ ] Permite crear nuevas tareas.
-* [ ] No debe dejar agregar tareas vacías de ningún tipo.
-* [ ] Permite marcar las tareas completadas.
-* [ ] Permite eliminar tareas específicas.
-* [ ] Deberá contener mínimo 2 componentes.
-
-#### Desplegado
-
-* [ ] Deberá ser desplegado en gh-pages, Heroku, etc.
-
-### Hacker Edition
-
-* [ ] Editar la tarea.
-* [ ] Implementar las operaciones de CRUD de la data con Firebase.
+![Arquitectura](https://scontent.flim6-1.fna.fbcdn.net/v/t1.15752-9/43024081_688725254834823_9118071245621952512_n.png?_nc_cat=109&_nc_eui2=AeFXhOZQd1QV3bPieIeJ4I-aoSaoj3dawMxhSVUrK2AN7otuWNPqk5pzeizrrho6UnCUhGw7u2_g0UXQ1tSKhT93rSwd24CPMXb_OxW6uO_izQ&oh=a856e62981665eed6d8212e6e31c6733&oe=5C22AE3E)
 
 
 
