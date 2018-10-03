@@ -36,9 +36,9 @@ export default {
 			const temp = []
 			const newData = dataList.map(data => {		
 				if(data.id === val.id){
-					temp.push({id:data.id, txt:data.txt, state: 'true'})
+					temp.push({id:data.id, txt:data.txt, state: 'true', update:false})
 				}else{
-					temp.push({id:data.id, txt:data.txt, state: data.state})					
+					temp.push({id:data.id, txt:data.txt, state: data.state, update: data.update})					
 				}
 			})		
 			this.list = temp;
@@ -50,18 +50,31 @@ export default {
 			})
 			this.list = newArray
 		})
+		this.$root.$on('update-list', (val) => {
+			const dataList = this.list;
+			const temp = []			
+			const update = dataList.map(data => {
+				if(data.id === val.id && val.option ==='update') {
+					temp.push({id:data.id, txt:data.txt, state:data.state, update:true})
+				} else if(data.id === val.id && val.option ==='cancelUpdate'){
+					temp.push({id:data.id, txt:data.txt, state: data.state, update:false})
+					}else{
+						temp.push({id:data.id, txt:data.txt, state: data.state, update: data.update})	
+					}
+			})
+			this.list = temp;
+		})
   },
 	components: { 'list-homework': listHmw },
 	methods: {
 		insert() {
 			if(this.txtHomework !== '') {
 				const arrayList = this.list
-				arrayList.push({id:Date.now(), txt:this.txtHomework, state:''})
+				arrayList.push({id:Date.now(), txt:this.txtHomework, state:'', update:false})
 				this.txtHomework = ''
 			}else{
-				this.message = 'Es campo está vacio'
+				this.message = 'El campo está vacio'
 			}
-
 		},
 		clean() {
 			this.txtHomework = ''

@@ -1,10 +1,13 @@
 <template>
   <ul class="collapsible">
     <li  v-for ='item in items' :key ='item.id' class="collection-item">
-			<div class="collapsible-header" v-bind:class="{ 'color': item.state, 'c-white': !item.state	}">
-					<i class="material-icons">chevron_right</i>
-						<label>{{item.txt}}</label>
-					<!-- 	<label>{{item.state}}</label> -->
+			<div class="collapsible-header" v-bind:class="{ 'color': item.state, 'c-white': !item.state	}"  @dblclick="update(item.id)">
+					<i class="material-icons" v-if="!item.update">chevron_right</i>
+						<label v-if="!item.update">{{item.txt}}</label>
+            <input v-else class="edit" type="text"
+              v-model="item.txt"
+              @blur="cancelUpdate(item.id)"
+              @keyup.enter="cancelUpdate(item.id)">
 						<span class="badge">
 						<i @click="completeHmw(item.id)" class="material-icons done">done</i>
 						<i @click="deleteHmw(item.id)" class="material-icons delete">delete</i>
@@ -20,7 +23,8 @@ export default {
     data() {
       return {
 				items: this.dataList,
-				color: '',
+        color: '',
+        edit: false
       }
     },
     watch: {    
@@ -34,6 +38,12 @@ export default {
       },
       deleteHmw(id) {
         this.$root.$emit('delete-list', {id:id})
+      },
+      update(id) {
+        this.$root.$emit('update-list',{id:id, option:'update'})
+      },
+      cancelUpdate(id) {
+        this.$root.$emit('update-list',{id:id, option:'cancelUpdate'})
       }
     }
 }
@@ -51,6 +61,13 @@ label {
 }
 .c-white {
 	background-color: white
+}
+.material-icons input{
+  width: 70% !important;
+  background: red !important;
+}
+#edit{
+  background: blue;
 }
 </style>
 
